@@ -6,6 +6,8 @@
 import logging
 from datetime import datetime
 import threading
+import readConfig
+import os
 
 class Log:
     def __init__(self):
@@ -23,19 +25,19 @@ class Log:
 
         self.logger = logging.getLogger()       # 定义logger,如果参数为空，则默认为返回Root对象
 
-        self.logger.setlevel(logging.INFO)      # setlevel方法设置日志级别为“INFO”，信息
+        self.logger.setLevel(logging.INFO)      # setLevel方法设置日志级别为“INFO”，信息
 
         handler = logging.FileHandler(os.path.join(logPath, "output.log"))      # 定义handler
 
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')   #定义formater
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')   #定义formatter
 
-        handler.setFormatter(formatter)         # 定义formater
+        handler.setFormatter(formatter)         # 定义formatter
 
         self.logger.addHandler(handler)         # 添加handler
 
 class MyLog:                                    # 将日志添加到线程之中
     log = None
-    mutex = threading.lock()
+    mutex = threading.Lock()
 
     def __init__(self):
         pass

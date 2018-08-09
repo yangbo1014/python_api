@@ -4,8 +4,8 @@ import os                                                   #对文件或目录�
 import codecs
 import configparser                                         #使用该模块的类ConfigParser使配置文件生效
 
-projectDir = os.path.split(os.path.realpath(__file__))[0]   #获取当前脚本所在路径并分割存入字典，取路径
-configPath = os.path.join(projectDir, "config.ini")         #将路径与文件名拼接
+proDir = os.path.split(os.path.realpath(__file__))[0]   #获取当前脚本所在路径并分割存入字典，取路径
+configPath = os.path.join(proDir, "config.ini")         #将路径与文件名拼接
 
 class ReadConfig:
     def __init__(self):
