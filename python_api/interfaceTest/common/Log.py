@@ -5,8 +5,8 @@
 
 import logging
 from datetime import datetime
-import threading
-import readConfig
+import threading                                    # 单独启用一个线程，在写log的时候会比较方便
+from interfaceTest import readConfig
 import os
 
 class Log:

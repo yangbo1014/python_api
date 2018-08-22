@@ -12,7 +12,7 @@ class ReadConfig:
         fd = open(configPath)
         data = fd.read()
         # remove BOM
-        if data[:3] == codecs.BOM_UTF8:
+        if data[:3] == codecs.BOM_UTF8:                 # txt前面默认为BOM,需要删除掉
             data = data[3:]
             file = codecs.open(configPath, "w")
             file.write(data)

@@ -1,6 +1,6 @@
 import requests
 import readConfig as readConfig
-from common.Log import MyLog as Log
+from Log import MyLog as Log
 
 localReadConfig = readConfig.ReadConfig()
 
