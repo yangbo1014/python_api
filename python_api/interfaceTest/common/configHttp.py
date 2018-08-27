@@ -3,6 +3,9 @@ import readConfig as readConfig
 from Log import MyLog as Log
 
 localReadConfig = readConfig.ReadConfig()
+log = Log.get_log()
+logger = log.get_logger()
+
 
 class ConfigHttp:
     def __init__(self):
